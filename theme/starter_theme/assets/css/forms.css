@@ -1,0 +1,199 @@
+/**
+ * Form styles — Contact Form 7 and native forms.
+ */
+
+.wpcf7 form {
+	display: grid;
+	gap: var(--space-6);
+}
+
+.wpcf7 label,
+.form-field label {
+	display: block;
+	margin-bottom: var(--space-2);
+	font-weight: 600;
+	font-size: var(--text-sm);
+	color: var(--color-charcoal);
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
+.wpcf7 input[type="date"],
+.wpcf7 input[type="time"],
+.wpcf7 input[type="url"],
+.wpcf7 select,
+.wpcf7 textarea,
+.form-field input,
+.form-field select,
+.form-field textarea {
+	width: 100%;
+	padding: var(--space-3) var(--space-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	font-family: var(--font-sans);
+	font-size: var(--text-base);
+	color: var(--color-text);
+	background: var(--color-white);
+	transition:
+		border-color var(--transition-fast),
+		box-shadow var(--transition-fast);
+}
+
+.wpcf7 input:focus,
+.wpcf7 select:focus,
+.wpcf7 textarea:focus,
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+	outline: none;
+	border-color: var(--color-sage);
+	box-shadow: 0 0 0 3px rgb(107 143 113 / 0.15);
+}
+
+.wpcf7 textarea {
+	min-height: 8rem;
+	resize: vertical;
+}
+
+.wpcf7 input[type="submit"],
+.form-submit {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: var(--btn-min-height);
+	padding: var(--btn-padding-y) var(--btn-padding-x);
+	border: none;
+	border-radius: var(--radius-button);
+	background: var(--color-sage);
+	color: var(--color-white);
+	font-family: var(--font-sans);
+	font-weight: var(--btn-font-weight);
+	font-size: var(--btn-font-size);
+	line-height: var(--btn-line-height);
+	cursor: pointer;
+	box-sizing: border-box;
+	transition:
+		background var(--transition-base),
+		transform var(--transition-base),
+		box-shadow var(--transition-base);
+}
+
+.wpcf7 input[type="submit"]:hover,
+.wpcf7 input[type="submit"]:focus,
+.form-submit:hover,
+.form-submit:focus {
+	background: var(--color-sage-dark);
+	transform: scale(1.03);
+	box-shadow: var(--shadow-md);
+}
+
+.wpcf7 input[type="submit"]:active,
+.form-submit:active {
+	transform: scale(0.98);
+}
+
+.wpcf7-not-valid-tip {
+	margin-top: var(--space-2);
+	font-size: var(--text-sm);
+	color: #dc2626;
+}
+
+.wpcf7-response-output {
+	margin: var(--space-4) 0 0;
+	padding: var(--space-4);
+	border-radius: var(--radius-md);
+	font-size: var(--text-sm);
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+	border: 1px solid var(--color-success);
+	background: #f0fdf4;
+	color: var(--color-success);
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+	border: 1px solid #dc2626;
+	background: #fef2f2;
+	color: #dc2626;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-6);
+}
+
+.form-grid .form-field--full {
+	grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+	.form-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.form-note {
+	margin-top: var(--space-4);
+	font-size: var(--text-sm);
+	color: var(--color-text-muted);
+	text-align: center;
+}
+
+.form-notice {
+	padding: var(--space-4) var(--space-6);
+	margin: 0;
+	text-align: center;
+}
+
+.form-notice--success {
+	background: #f0fdf4;
+	color: var(--color-success);
+	border-bottom: 1px solid #bbf7d0;
+}
+
+.form-notice p {
+	margin: 0;
+	font-weight: 500;
+}
+
+.booking-slots__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-3);
+	margin-top: var(--space-3);
+}
+
+.booking-slot {
+	padding: var(--space-3) var(--space-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	background: var(--color-white);
+	color: var(--color-charcoal);
+	font: inherit;
+	cursor: pointer;
+	transition:
+		border-color var(--transition-base),
+		background var(--transition-base),
+		box-shadow var(--transition-base);
+}
+
+.booking-slot:hover,
+.booking-slot.is-selected {
+	border-color: var(--color-sage);
+	background: var(--color-sage-light);
+	box-shadow: var(--shadow-sm);
+}
+
+.booking-app .form-notice {
+	margin-bottom: var(--space-6);
+	border-radius: var(--radius-lg);
+}
+
+.booking-app .form-notice--error {
+	background: #fef2f2;
+	color: #b42318;
+	border: 1px solid #fecaca;
+}

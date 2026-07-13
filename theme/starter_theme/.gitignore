@@ -1,0 +1,33 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node (theme tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Composer
+/vendor/
+
+# Build artifacts
+*.map
+.sass-cache/
+
+# Logs & env (never commit secrets)
+*.log
+.env
+.env.*
+
+# WordPress runtime (if this repo is ever expanded)
+wp-config.php
+uploads/
+upgrade/
+cache/

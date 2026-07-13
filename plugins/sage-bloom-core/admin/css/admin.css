@@ -1,0 +1,138 @@
+.sbc-admin .description {
+	max-width: 48rem;
+}
+
+.sbc-kpi-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.sbc-kpi-card {
+	padding: 1rem 1.25rem;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+.sbc-kpi-card__label {
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #646970;
+}
+
+.sbc-kpi-card__value {
+	display: block;
+	margin-top: 0.35rem;
+	font-size: 1.75rem;
+	line-height: 1.1;
+}
+
+.sbc-admin-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.sbc-panel {
+	padding: 1rem 1.25rem;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+
+.sbc-panel--wide {
+	margin-top: 1rem;
+}
+
+.sbc-status-list,
+.sbc-activity-list,
+.sbc-calendar-day ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sbc-status-list li,
+.sbc-activity-list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.sbc-activity-list li {
+	flex-wrap: wrap;
+}
+
+.sbc-activity-list time {
+	color: #646970;
+	font-size: 12px;
+}
+
+.sbc-status {
+	display: inline-block;
+	padding: 0.15rem 0.5rem;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	background: #f0f0f1;
+	color: #1d2327;
+}
+
+.sbc-status--pending { background: #fcf9e8; color: #8a6d00; }
+.sbc-status--confirmed { background: #edfaef; color: #0a6620; }
+.sbc-status--completed { background: #e8f4fd; color: #0a4b78; }
+.sbc-status--cancelled { background: #fcf0f1; color: #8a1f2d; }
+
+.sbc-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1rem 0;
+}
+
+.sbc-inline-form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	align-items: center;
+}
+
+.sbc-calendar {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1rem;
+}
+
+.sbc-calendar-day {
+	padding: 0.75rem;
+	border: 1px solid #f0f0f1;
+	border-radius: 8px;
+}
+
+.sbc-calendar-day h3 {
+	margin-top: 0;
+}
+
+.sbc-calendar-day li {
+	padding: 0.35rem 0;
+	border-bottom: 1px solid #f6f7f7;
+}
+
+.sbc-bookings-table .button-small {
+	margin-top: 0;
+}
+
+.sbc-my-bookings .sbc-bookings-table {
+	margin-top: 1rem;
+}

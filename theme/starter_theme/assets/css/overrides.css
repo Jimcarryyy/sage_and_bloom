@@ -1,0 +1,371 @@
+/**
+ * Theme overrides — wins over Underscores style.css and plugin defaults.
+ * Load last in the stylesheet queue.
+ */
+
+html,
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+	min-height: 100%;
+}
+
+#page.site {
+	margin-bottom: 0 !important;
+}
+
+/* -------------------------------------------------------------------------
+   Global links (reset Underscores blue/purple visited styles)
+   ------------------------------------------------------------------------- */
+
+.site-main a:not(.btn):not(.woocommerce-LoopProduct-link):not(.header-cart) {
+	color: var(--color-sage-dark);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+.site-main a:not(.btn):visited {
+	color: var(--color-sage-dark);
+}
+
+.site-main a:not(.btn):hover,
+.site-main a:not(.btn):focus {
+	color: var(--color-charcoal);
+}
+
+.main-navigation a,
+.main-navigation a:visited,
+.footer-menu a,
+.footer-menu a:visited,
+.site-footer a,
+.site-footer a:visited,
+.site-title a,
+.site-title a:visited,
+.header-topbar a,
+.header-topbar a:visited {
+	color: inherit;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	color: var(--color-sage);
+}
+
+.services-filter a,
+.services-filter a:visited {
+	color: var(--color-text);
+}
+
+.services-filter a:hover,
+.services-filter a:focus,
+.services-filter a.is-active,
+.services-filter a.is-active:hover,
+.services-filter a.is-active:focus,
+.services-filter a.is-active:visited {
+	color: var(--color-white) !important;
+}
+
+/* -------------------------------------------------------------------------
+   Buttons as links — force colors (fixes purple :visited on .btn)
+   ------------------------------------------------------------------------- */
+
+a.btn,
+a.btn:link,
+a.btn:visited,
+a.btn:hover,
+a.btn:focus,
+a.btn:active {
+	text-decoration: none;
+}
+
+a.btn--primary,
+a.btn--primary:link,
+a.btn--primary:visited,
+a.btn--primary:hover,
+a.btn--primary:focus,
+a.btn--primary:active {
+	color: var(--color-white) !important;
+	background: var(--color-sage);
+	border-color: transparent;
+}
+
+a.btn--primary:hover,
+a.btn--primary:focus {
+	background: var(--color-sage-dark) !important;
+	color: var(--color-white) !important;
+}
+
+a.btn--secondary,
+a.btn--secondary:link,
+a.btn--secondary:visited,
+a.btn--secondary:hover,
+a.btn--secondary:focus,
+a.btn--secondary:active {
+	color: var(--color-white) !important;
+	background: var(--color-charcoal);
+	border-color: transparent;
+}
+
+a.btn--secondary:hover,
+a.btn--secondary:focus {
+	background: #2d2d2f !important;
+	color: var(--color-white) !important;
+}
+
+a.btn--outline,
+a.btn--outline:link,
+a.btn--outline:visited {
+	color: var(--color-sage) !important;
+	background: transparent;
+}
+
+a.btn--outline:hover,
+a.btn--outline:focus {
+	color: var(--color-white) !important;
+	background: var(--color-sage) !important;
+}
+
+a.btn--ghost,
+a.btn--ghost:link,
+a.btn--ghost:visited,
+a.btn--ghost:hover,
+a.btn--ghost:focus,
+a.btn--ghost:active {
+	color: var(--color-white) !important;
+}
+
+/* Reset Underscores button styles on theme buttons */
+.btn,
+button.btn,
+input.btn {
+	border: var(--btn-border-width) solid transparent;
+	background-image: none;
+	line-height: var(--btn-line-height);
+	min-height: var(--btn-min-height);
+	padding: var(--btn-padding-y) var(--btn-padding-x);
+	font-size: var(--btn-font-size);
+	font-weight: var(--btn-font-weight);
+	box-sizing: border-box;
+}
+
+.btn--sm,
+.btn--header {
+	min-height: var(--btn-min-height-sm);
+	padding: var(--btn-padding-y-sm) var(--btn-padding-x-sm);
+	font-size: var(--btn-font-size-sm);
+}
+
+.btn--lg {
+	min-height: var(--btn-min-height);
+	padding: var(--btn-padding-y) var(--btn-padding-x);
+	font-size: var(--btn-font-size);
+}
+
+/* -------------------------------------------------------------------------
+   Unified button sizing — theme, WooCommerce, forms
+   ------------------------------------------------------------------------- */
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.wc-block-components-button:not(.is-link),
+.wpcf7 input[type="submit"],
+.form-submit,
+:is(.woocommerce, .home-products) ul.products li.product .button,
+:is(.woocommerce, .home-products) ul.products li.product .added_to_cart {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	min-height: var(--btn-min-height) !important;
+	padding: var(--btn-padding-y) var(--btn-padding-x) !important;
+	font-family: var(--font-sans) !important;
+	font-size: var(--btn-font-size) !important;
+	font-weight: var(--btn-font-weight) !important;
+	line-height: var(--btn-line-height) !important;
+	border-radius: var(--radius-button) !important;
+	box-sizing: border-box !important;
+}
+
+/* Product grid — full-width buttons inside cards */
+:is(.woocommerce, .home-products) ul.products li.product .button,
+:is(.woocommerce, .home-products) ul.products li.product .added_to_cart {
+	display: block !important;
+	width: auto !important;
+	text-align: center !important;
+}
+
+/* -------------------------------------------------------------------------
+   WooCommerce buttons
+   ------------------------------------------------------------------------- */
+
+/* Product grid — outline; preserve card internal padding */
+:is(.woocommerce, .home-products) ul.products li.product .button,
+:is(.woocommerce, .home-products) ul.products li.product .button:visited {
+	color: var(--color-sage) !important;
+	background: transparent !important;
+	border: var(--btn-border-width) solid var(--color-sage) !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+}
+
+:is(.woocommerce, .home-products) ul.products li.product .price {
+	padding: var(--space-2) var(--space-6) var(--space-5) !important;
+	margin: 0 !important;
+}
+
+:is(.woocommerce, .home-products) ul.products li.product .woocommerce-loop-product__title {
+	padding: var(--space-6) var(--space-6) var(--space-2) !important;
+}
+
+:is(.woocommerce, .home-products) ul.products li.product .button:hover {
+	color: var(--color-white) !important;
+	background: var(--color-sage) !important;
+	border-color: var(--color-sage) !important;
+}
+
+:is(.woocommerce, .home-products) ul.products li.product .added_to_cart,
+:is(.woocommerce, .home-products) ul.products li.product .added_to_cart:visited {
+	color: var(--color-sage-dark) !important;
+	background: var(--color-sage-light) !important;
+	border: none !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+}
+
+:is(.woocommerce, .home-products) ul.products li.product .added_to_cart:hover {
+	color: var(--color-white) !important;
+	background: var(--color-sage) !important;
+}
+
+/* Primary actions — filled (cart, checkout, single product) */
+.woocommerce a.button.alt,
+.woocommerce a.button.alt:visited,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce div.product form.cart .button,
+.woocommerce div.product form.cart .button:visited,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:visited,
+.woocommerce #payment #place_order,
+.wc-block-components-button:not(.is-link),
+.wc-block-cart__submit-button,
+.wp-block-woocommerce-proceed-to-checkout-block .wc-block-components-button {
+	color: var(--color-white) !important;
+	background: var(--color-sage) !important;
+	border: var(--btn-border-width) solid var(--color-sage) !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+}
+
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce div.product form.cart .button:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce #payment #place_order:hover,
+.wc-block-components-button:not(.is-link):hover,
+.wc-block-cart__submit-button:hover,
+.wp-block-woocommerce-proceed-to-checkout-block .wc-block-components-button:hover {
+	background: var(--color-sage-dark) !important;
+	border-color: var(--color-sage-dark) !important;
+	color: var(--color-white) !important;
+}
+
+/* Secondary Woo buttons */
+.woocommerce a.button:not(.alt),
+.woocommerce button.button:not(.alt),
+.woocommerce input.button:not(.alt) {
+	color: var(--color-sage) !important;
+	background: transparent !important;
+	border: var(--btn-border-width) solid var(--color-sage) !important;
+	box-shadow: none !important;
+	text-decoration: none !important;
+}
+
+.woocommerce a.button:not(.alt):hover,
+.woocommerce button.button:not(.alt):hover,
+.woocommerce input.button:not(.alt):hover {
+	color: var(--color-white) !important;
+	background: var(--color-sage) !important;
+	border-color: var(--color-sage) !important;
+}
+
+/* Hide blog sidebar widgets on storefront pages */
+.woocommerce-page #secondary,
+.woocommerce-cart #secondary,
+.woocommerce-checkout #secondary,
+.woocommerce-account #secondary {
+	display: none !important;
+}
+
+/* My Account — sidebar + content layout (override WC floats) */
+.woocommerce-account .woocommerce-notices-wrapper {
+	grid-column: 1 / -1;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation,
+.woocommerce-account .woocommerce-MyAccount-content {
+	float: none !important;
+	width: auto !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.woocommerce-account .u-columns.col2-set,
+.woocommerce-account #customer_login {
+	grid-column: 1 / -1;
+}
+
+.woocommerce-account .u-column1.col-1,
+.woocommerce-account .u-column2.col-2 {
+	float: none !important;
+	width: 100% !important;
+}
+
+/* -------------------------------------------------------------------------
+   Headings on dark sections
+   ------------------------------------------------------------------------- */
+
+.home-hero h1,
+.home-hero .home-hero__heading,
+.page-hero h1,
+.page-hero .page-hero__title {
+	color: var(--color-white) !important;
+}
+
+.home-hero a.btn--ghost:visited,
+.page-hero a.btn--ghost:visited,
+.page-cta a.btn--ghost:visited,
+.home-cta a.btn--ghost:visited {
+	color: var(--color-white) !important;
+}
+
+/* -------------------------------------------------------------------------
+   Service card links
+   ------------------------------------------------------------------------- */
+
+.service-card__title a,
+.service-card__title a:visited {
+	color: var(--color-charcoal);
+	text-decoration: none;
+}
+
+.service-card__title a:hover {
+	color: var(--color-sage);
+}
+
+.service-card__cta.btn:visited {
+	color: var(--color-sage) !important;
+}
+
+.service-card__cta.btn:hover,
+.service-card__cta.btn:focus {
+	color: var(--color-white) !important;
+}
